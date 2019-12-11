@@ -3,6 +3,10 @@ from letters_mapping import runic_letters
 from faker import Faker
 
 fake = Faker("ru_RU")
+ability = {
+    "min_lvl": 8,
+    "max_lvl": 14
+}
 
 skills = []
 with open('skills.txt') as file:
@@ -19,11 +23,11 @@ for number in range(10):
     "last_name": fake.last_name_male(),
     "town": fake.city(),
     "job": fake.job(),
-    "strength": random.randint(8, 14),
-    "agility": random.randint(8, 14),
-    "endurance": random.randint(8, 14),
-    "intelligence": random.randint(8, 14),
-    "luck": random.randint(8, 14),
+    "strength": random.randint(ability['min_lvl'], ability['max_lvl']),
+    "agility": random.randint(ability['min_lvl'], ability['max_lvl']),
+    "endurance": random.randint(ability['min_lvl'], ability['max_lvl']),
+    "intelligence": random.randint(ability['min_lvl'], ability['max_lvl']),
+    "luck": random.randint(ability['min_lvl'], ability['max_lvl']),
     "skill_1": monstr_skills[0],
     "skill_2": monstr_skills[1],
     "skill_3": monstr_skills[2]
