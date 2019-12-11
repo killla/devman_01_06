@@ -7,6 +7,8 @@ ability = {
     "min_lvl": 8,
     "max_lvl": 14
 }
+count_of_monstres = 10
+count_of_skills = 3
 
 skills = []
 with open('skills.txt') as file:
@@ -16,8 +18,8 @@ with open('skills.txt') as file:
         skill = skill.replace(letter, runic_letters[letter])
     skills.append(skill)
 
-for number in range(10): 
-  monstr_skills = random.sample(skills, 3)
+for number in range(count_of_monstres):
+  monstr_skills = random.sample(skills, count_of_skills)
   context = {
     "first_name": fake.first_name_male(),
     "last_name": fake.last_name_male(),
